@@ -183,7 +183,7 @@
   }
 
   .site-sidebar-brand strong,
-  .site-sidebar-brand span {
+  .site-sidebar-subtitle {
     display: block;
   }
 
@@ -192,7 +192,7 @@
     letter-spacing: 0.03em;
   }
 
-  .site-sidebar-brand span:not(.site-sidebar-mark) {
+  .site-sidebar-subtitle {
     margin-top: 0.15rem;
     color: #708079;
     font-size: 0.76rem;
@@ -201,6 +201,11 @@
   .site-sidebar-nav {
     display: grid;
     gap: 0.55rem;
+  }
+
+  .site-sidebar-group {
+    display: grid;
+    gap: 0.4rem;
   }
 
   .site-sidebar-link {
@@ -221,12 +226,55 @@
       box-shadow 180ms ease;
   }
 
+  .site-sidebar-link span {
+    flex: 1;
+  }
+
+  .site-sidebar-chevron {
+    flex: 0 0 auto;
+    color: #7c8d85;
+    transition: transform 180ms ease;
+  }
+
+  .site-sidebar-chevron[data-expanded="true"] {
+    transform: rotate(180deg);
+  }
+
   .site-sidebar-link:hover,
   .site-sidebar-link[data-active="true"] {
     border-color: rgba(125, 150, 139, 0.58);
     background: rgba(235, 241, 236, 0.82);
     color: #1f2a28;
     box-shadow: 0 12px 30px rgba(47, 55, 50, 0.07);
+    transform: translateX(2px);
+  }
+
+  .site-sidebar-subnav {
+    display: grid;
+    gap: 0.3rem;
+    margin-left: 1.15rem;
+    padding-left: 0.85rem;
+    border-left: 1px solid rgba(167, 185, 173, 0.55);
+  }
+
+  .site-sidebar-sublink {
+    display: flex;
+    min-height: 2.15rem;
+    align-items: center;
+    border-radius: 7px;
+    padding: 0.45rem 0.7rem;
+    color: #64736d;
+    font-size: 0.86rem;
+    transition:
+      background 180ms ease,
+      color 180ms ease,
+      transform 180ms ease;
+  }
+
+  .site-sidebar-sublink:hover,
+  .site-sidebar-sublink[data-active="true"] {
+    background: rgba(235, 241, 236, 0.75);
+    color: #1f2a28;
     transform: translateX(2px);
   }
 
@@ -641,6 +689,54 @@
     font-weight: 600;
     white-space: nowrap;
   }
+
+  .year-card-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .year-card {
+    border: 1px solid rgba(176, 169, 149, 0.55);
+    border-radius: 8px;
+    background: rgba(255, 253, 248, 0.72);
+    box-shadow: 0 18px 46px rgba(47, 55, 50, 0.08);
+    cursor: pointer;
+    padding: 1rem;
+    backdrop-filter: blur(18px);
+    transition:
+      transform 180ms ease,
+      border-color 180ms ease,
+      background 180ms ease,
+      box-shadow 180ms ease;
+  }
+
+  .year-card:hover,
+  .year-card:focus-visible {
+    transform: translateY(-5px);
+    border-color: rgba(104, 133, 120, 0.8);
+    background: rgba(255, 255, 252, 0.92);
+    box-shadow: 0 24px 58px rgba(47, 55, 50, 0.14);
+    outline: none;
+  }
+
+  .year-card h3 {
+    color: #1f2a28;
+    font-size: 1rem;
+    font-weight: 650;
+    transition: color 180ms ease;
+  }
+
+  .year-card:hover h3,
+  .year-card:focus-visible h3 {
+    color: #38564d;
+  }
+
+  .year-card p {
+    margin-top: 0.45rem;
+    color: #5e6c66;
+    line-height: 1.7;
+  }
 }
 
 @keyframes ink-drift {
@@ -674,8 +770,16 @@
   }
 
   .site-sidebar-nav {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 0.45rem;
+  }
+
+  .site-sidebar-group {
+    min-width: 0;
+  }
+
+  .site-sidebar-group[data-expanded="true"] {
+    grid-column: 1 / -1;
   }
 
   .site-sidebar-link {
@@ -684,6 +788,29 @@
     padding: 0.62rem 0.5rem;
     text-align: center;
     transform: none;
+  }
+
+  .site-sidebar-link span {
+    flex: 0 1 auto;
+  }
+
+  .site-sidebar-chevron {
+    display: none;
+  }
+
+  .site-sidebar-subnav {
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin: 0;
+    border-left: 0;
+    padding: 0;
+  }
+
+  .site-sidebar-sublink {
+    justify-content: center;
+    min-height: 2.1rem;
+    background: rgba(255, 253, 248, 0.62);
+    text-align: center;
   }
 
   .site-sidebar-link:hover,
@@ -697,6 +824,10 @@
   }
 
   .portrait-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .year-card-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -713,6 +844,16 @@
 
   .site-sidebar-link svg {
     display: none;
+  }
+
+  .site-sidebar-subnav {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 0.25rem;
+  }
+
+  .site-sidebar-sublink {
+    padding: 0.4rem 0.25rem;
+    font-size: 0.74rem;
   }
 
   .ink-wash {
