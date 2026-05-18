@@ -22,7 +22,7 @@ export function CareerYearPage({ year }: { year: string }) {
       <div className="ink-wash ink-wash-b" />
       <div className="paper-grain" />
 
-      <main className="relative z-10 mx-auto grid w-full max-w-7xl gap-8 px-4 py-8 sm:px-6 lg:grid-cols-[11rem_minmax(0,1fr)] lg:px-8">
+      <main className="career-year-layout relative z-10 mx-auto grid w-full gap-8 px-4 py-8 sm:px-6 lg:px-8">
         <aside className="career-event-toc" aria-label={`${data.year} 事件目录`}>
           <p>{data.year} 事件目录</p>
           <nav>
@@ -34,7 +34,7 @@ export function CareerYearPage({ year }: { year: string }) {
           </nav>
         </aside>
 
-        <div className="min-w-0">
+        <div className="career-year-content min-w-0">
           <Link
             className="mb-6 inline-flex items-center gap-2 rounded-md border border-[#cfd8cf] bg-white/55 px-3 py-2 text-sm text-[#526961] transition hover:bg-white"
             href="/career"
