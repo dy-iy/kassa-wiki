@@ -169,9 +169,9 @@ export const careerYears = [
         ],
       },
       {
-        title: "ALGS Year 4 Championship - Split2",
-        date: "2025.02",
-        description: "札幌冠军赛",
+        title: "札幌冠军赛 ALGS Year 4 Championship - Split2",
+        date: "2025-02",
+        description: "",
         videos: [],
       },
       {
@@ -184,7 +184,33 @@ export const careerYears = [
         title: "EWC电竞世界杯",
         date: "",
         description: "",
-        videos: [],
+        videos: [
+          {
+            cover: "/images/career/2025/【沙特石油杯官方宣传片】冠军 VKG 的超帅宣传片！.avif",
+            text: "【沙特石油杯官方宣传片】冠军 VKG 的超帅宣传片！",
+            href: "https://www.bilibili.com/video/BV1Pn3qz9Ec6",
+          },
+          {
+            cover: "/images/career/2025/【VKG夺冠第一视角】EWC 2025 季中赛Day4决赛.avif",
+            text: "【VKG夺冠第一视角】EWC/ALGS 2025 季中赛Day4决赛",
+            href: "https://www.bilibili.com/video/BV17juqzzEiZ",
+          },
+          {
+            cover: "/images/career/2025/【EWC电竞世界杯】恭喜VKG夺得世界冠军！.avif",
+            text: "【EWC电竞世界杯】恭喜VKG夺得世界冠军！",
+            href: "https://www.bilibili.com/video/BV1EwuYzYEBF/",
+          },
+          {
+            cover: "/images/career/2025/【VKG】我们是EWC世界冠军！.avif",
+            text: "【VKG】我们是EWC世界冠军！",
+            href: "https://www.bilibili.com/video/BV1gHuYzSEBr",
+          },
+          {
+            cover: "/images/career/2025/这并非一场梦，天上下起金色的雨！.avif",
+            text: "这并非一场梦，天上下起金色的雨！",
+            href: "https://www.bilibili.com/video/BV1FJunzYEVW",
+          },
+        ],
       },
     ],
   },
