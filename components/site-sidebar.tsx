@@ -7,7 +7,7 @@ import type { LucideIcon } from "lucide-react";
 import type { ReactNode } from "react";
 import { useEffect, useState } from "react";
 
-const careerYears = ["2021", "2022", "2023", "2024", "2025", "2026"];
+const careerYears = ["2025", "2026"];
 
 type NavItem = {
   href: string;
