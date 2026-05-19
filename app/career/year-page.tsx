@@ -61,7 +61,6 @@ export function CareerYearPage({ year }: { year: string }) {
                   ) : null}
                   <div className="event-note-card">
                     <div className="event-card-section">
-                      <h4>事件概览</h4>
                       <EventMarkdown>{event.description}</EventMarkdown>
                     </div>
 

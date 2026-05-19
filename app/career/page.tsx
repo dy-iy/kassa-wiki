@@ -4,6 +4,39 @@ import { TimelineEventVideos } from "./timeline-event-videos";
 import type { CareerVideo } from "./year-data";
 import { careerYears } from "./year-data";
 
+const careerYearNavItems = [
+  {
+    year: "2021",
+    description: "初入 ALGS 职业赛场，打出第一声回响。",
+    tags: ["#出道", "#证明"],
+  },
+  {
+    year: "2022",
+    description: "进入 MDY 时期，在队伍磨合和职业节奏里继续累积经验。",
+    tags: ["#成长", "#MDY"],
+  },
+  {
+    year: "2023",
+    description: "VKG 成立，职业路线迎来新的队伍身份和重要转折。",
+    tags: ["#转折", "#VKG"],
+  },
+  {
+    year: "2024",
+    description: "首次闯入线下赛舞台，把职业生涯推进到世界赛现场。",
+    tags: ["#线下赛", "#突破"],
+  },
+  {
+    year: "2025",
+    description: "站上 EWC 兼 ALGS 季中赛决赛顶点，写下 CNAPEX 冠军时刻。",
+    tags: ["#冠军", "#世界赛"],
+  },
+  {
+    year: "2026",
+    description: "继续代表 VKG 出征，在新赛季里延续故事与挑战。",
+    tags: ["#继续出征", "#新赛季"],
+  },
+];
+
 type TimelineEvent = {
   time: string;
   title: string;
@@ -119,15 +152,62 @@ export default function CareerPage() {
               <p>按年份进入更细的职业生涯记录。</p>
             </div>
           </div>
-          <div className="year-card-grid">
-            {careerYears.map((item) => (
-              <Link className="year-card transition hover:-translate-y-1" href={`/career/${item.year}`} key={item.year}>
-                <p className="eyebrow">{item.year}</p>
-                <h3>{item.title}</h3>
-                <p>{item.summary}</p>
-              </Link>
-            ))}
-          </div>
+          <nav className="year-zigzag-timeline" aria-label="按年份进入更细的职业生涯记录">
+            <svg className="year-zigzag-line" viewBox="0 0 1000 220" preserveAspectRatio="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="career-year-line" x1="0" x2="1" y1="0" y2="0">
+                  <stop offset="0%" stopColor="#8ca99a" />
+                  <stop offset="45%" stopColor="#4f7767" />
+                  <stop offset="72%" stopColor="#b79b63" />
+                  <stop offset="100%" stopColor="#6f9483" />
+                </linearGradient>
+                <linearGradient id="career-year-flow" x1="-100%" x2="100%" y1="0%" y2="0%">
+                  <stop offset="0%" stopColor="#5f8876" />
+                  <stop offset="22%" stopColor="#cdbb83" />
+                  <stop offset="46%" stopColor="#f7edbd" />
+                  <stop offset="68%" stopColor="#75a18c" />
+                  <stop offset="100%" stopColor="#4f7767" />
+                  <animate attributeName="x1" dur="4.8s" repeatCount="indefinite" values="-100%;0%;100%" />
+                  <animate attributeName="x2" dur="4.8s" repeatCount="indefinite" values="0%;100%;200%" />
+                </linearGradient>
+              </defs>
+              <polyline className="year-zigzag-line-glow" points="62 136 238 92 412 132 588 86 762 136 938 92" stroke="rgba(151, 175, 160, 0.45)" />
+              <polyline className="year-zigzag-line-main" points="62 136 238 92 412 132 588 86 762 136 938 92" stroke="url(#career-year-line)" />
+              <polyline className="year-zigzag-line-flow" points="62 136 238 92 412 132 588 86 762 136 938 92" stroke="url(#career-year-flow)" />
+            </svg>
+            <div className="year-zigzag-list">
+              {careerYears.map((item, index) => {
+                const navItem = careerYearNavItems.find((yearItem) => yearItem.year === item.year);
+                const isUpper = index % 2 === 0;
+
+                return (
+                  <Link
+                    className={`year-zigzag-item ${isUpper ? "is-upper" : "is-lower"}`}
+                    href={`/career/${item.year}`}
+                    key={item.year}
+                  >
+                    <span className="year-zigzag-node" aria-hidden="true">
+                      <span>{item.year.slice(2)}</span>
+                    </span>
+                    <span className="year-zigzag-card">
+                      <span className="eyebrow">{item.year}</span>
+                      <span className="year-zigzag-title">{item.title}</span>
+                      <span className="year-zigzag-description">{navItem?.description || item.summary}</span>
+                      {navItem?.tags?.length ? (
+                        <span className="year-zigzag-tags">
+                          {navItem.tags.map((tag) => (
+                            <span className="soft-tag" key={tag}>
+                              {tag}
+                            </span>
+                          ))}
+                        </span>
+                      ) : null}
+                    </span>
+                  </Link>
+                );
+              })}
+            </div>
+          </nav>
         </section>
 
         <section className="section-block">
