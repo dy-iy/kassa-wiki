@@ -605,10 +605,18 @@
     overflow-x: hidden;
   }
 
+  .career-year-toolbar {
+    margin-bottom: 1.5rem;
+  }
+
   .career-year-content {
     width: 100%;
     max-width: 57.5rem;
     margin-inline: auto;
+  }
+
+  .career-event-scroll {
+    min-width: 0;
   }
 
   .career-event-toc {
@@ -1535,13 +1543,67 @@
 }
 
 @media (min-width: 1024px) {
+  .career-year-shell {
+    height: 100vh;
+    overflow: hidden;
+  }
+
   .career-year-layout {
-    grid-template-columns: 15rem minmax(0, 1fr);
-    column-gap: 3rem;
+    height: 100%;
+    align-items: stretch;
+    grid-template-columns: clamp(14rem, 18vw, 17rem) minmax(0, 1fr);
+    column-gap: clamp(2rem, 3.4vw, 4rem);
+    padding-block: 2rem;
+    padding-inline: clamp(1.5rem, 3vw, 3rem);
+  }
+
+  .career-year-content {
+    display: grid;
+    height: 100%;
+    min-height: 0;
+    max-width: none;
+    grid-template-rows: auto minmax(0, 1fr);
+    margin-inline: 0;
+  }
+
+  .career-year-toolbar {
+    margin-bottom: 1rem;
+  }
+
+  .career-year-section {
+    display: grid;
+    min-height: 0;
+    grid-template-rows: auto minmax(0, 1fr);
+    margin-top: 0;
+  }
+
+  .career-year-section .section-heading {
+    margin-bottom: 1.25rem;
+  }
+
+  .career-event-scroll {
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding-right: clamp(0.75rem, 1.2vw, 1.25rem);
+    scrollbar-gutter: stable;
+  }
+
+  .career-event-scroll .event-note-list {
+    padding-bottom: 2rem;
   }
 
   .career-event-toc {
     display: block;
+    position: relative;
+    top: auto;
+    height: 100%;
+    max-height: none;
+    border-left: 0;
+    border-right: 1px solid rgba(167, 185, 173, 0.6);
+    padding-top: 5.15rem;
+    padding-right: 1.25rem;
+    padding-left: 0;
   }
 }
 

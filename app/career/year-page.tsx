@@ -18,7 +18,7 @@ export function CareerYearPage({ year }: { year: string }) {
   }));
 
   return (
-    <div className="ink-wiki min-h-screen overflow-x-hidden text-[#26312f]">
+    <div className="career-year-shell ink-wiki min-h-screen overflow-x-hidden text-[#26312f]">
       <div className="ink-wash ink-wash-a" />
       <div className="ink-wash ink-wash-b" />
       <div className="paper-grain" />
@@ -36,15 +36,17 @@ export function CareerYearPage({ year }: { year: string }) {
         </aside>
 
         <div className="career-year-content min-w-0">
-          <Link
-            className="mb-6 inline-flex items-center gap-2 rounded-md border border-[#cfd8cf] bg-white/55 px-3 py-2 text-sm text-[#526961] transition hover:bg-white"
-            href="/career"
-          >
-            <ArrowLeft className="size-4" />
-            返回职业生涯总览
-          </Link>
+          <div className="career-year-toolbar">
+            <Link
+              className="inline-flex items-center gap-2 rounded-md border border-[#cfd8cf] bg-white/55 px-3 py-2 text-sm text-[#526961] transition hover:bg-white"
+              href="/career"
+            >
+              <ArrowLeft className="size-4" />
+              返回职业生涯总览
+            </Link>
+          </div>
 
-          <section className="section-block">
+          <section className="career-year-section section-block">
             <div className="section-heading">
               <CalendarDays className="size-5" />
               <div>
@@ -52,25 +54,27 @@ export function CareerYearPage({ year }: { year: string }) {
                 <p>记录该年度的关键节点、队伍变化和阶段成果。</p>
               </div>
             </div>
-            <div className="event-note-list">
-              {eventItems.map((event) => (
-                <article className="event-note" id={event.anchorId} key={event.anchorId}>
-                  <h3>{event.displayTitle}</h3>
-                  {event.date ? (
-                    <p className="event-note-date">{event.date}</p>
-                  ) : null}
-                  <div className="event-note-card">
-                    <div className="event-card-section">
-                      <EventMarkdown>{event.description}</EventMarkdown>
-                    </div>
+            <div className="career-event-scroll">
+              <div className="event-note-list">
+                {eventItems.map((event) => (
+                  <article className="event-note" id={event.anchorId} key={event.anchorId}>
+                    <h3>{event.displayTitle}</h3>
+                    {event.date ? (
+                      <p className="event-note-date">{event.date}</p>
+                    ) : null}
+                    <div className="event-note-card">
+                      <div className="event-card-section">
+                        <EventMarkdown>{event.description}</EventMarkdown>
+                      </div>
 
-                    <div className="event-card-section">
-                      <h4>相关视频</h4>
-                      <EventVideos displayTitle={event.displayTitle} videos={event.videos} />
+                      <div className="event-card-section">
+                        <h4>相关视频</h4>
+                        <EventVideos displayTitle={event.displayTitle} videos={event.videos} />
+                      </div>
                     </div>
-                  </div>
-                </article>
-              ))}
+                  </article>
+                ))}
+              </div>
             </div>
           </section>
         </div>
