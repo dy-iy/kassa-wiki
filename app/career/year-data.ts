@@ -171,16 +171,129 @@ export const careerYears = [
         title: "札幌冠军赛 ALGS Year 4 Championship - Split2",
         date: "2025-02",
         description: md(`
+          VKG-951 退役之后，Kasssa、QQ、LqDuD 组成新的 VKG 战队。
+          2025 年札幌冠军赛期间，新的 VKG 三人组第一次进入线下，代表中国赛区登上 ALGS 年度最高舞台。
+          VKG 并不是以一路领跑的方式进入决赛，而是在小组赛阶段落入败者组后，连续通过两轮淘汰赛完成突围，最终站上总决赛舞台。
+          # 小组赛 Group Stage
+
+          40 支队伍分成 4 个小组，每组 10 队。
+          每个小组都要和其他小组打一轮 6 局系列赛。
+          小组赛结束后，按总积分排名:  
+          | 小组赛排名 | 去向 | 
+          | --- | --- |
+          | 前 20 名 | 进入胜者组 Winners Bracket | 
+          | 后 20 名 |进入败者组第一轮 Elimination Bracket Round 1 | 
+
+          VKG分在了 B 组。
+          ## Day 1
+          Day 1 共三场比赛，分别为 A vs.B、C vs.D、B vs.D。
+          ### A vs.B
+            第一场状态较差，6 把只拿了 20 分，本轮排名 16
+            | 对局 | 排名 | Kills | Score |
+            | --- | ---: | ---: | ---: |
+            | Game #1 | 11 | 3 | 4 |
+            | Game #2 | 16 | 0 | 1 |
+            | Game #3 | 6 | 5 | 7 |
+            | Game #4 | 19 | 0 | 0 |
+            | Game #5 | 6 | 5 | 8 |
+            | Game #6 | 19 | 0 | 0 |
+            | 总计 | | | 20 |
+
+          ### B vs.D
+          第二场状态好转，6 把拿了 44 分，本轮排名 7
+            | 对局 | 排名 | Kills | Score |
+            | --- | ---: | ---: | ---: |
+            | Game #1 | 9 | 3 | 5 |
+            | Game #2 | 13 | 2 | 2 |
+            | Game #3 | 9 | 5 | 6 |
+            | Game #4 | 5 | 3 | 7 |
+            | Game #5 | 2 | 10 | 19 |
+            | Game #6 | 8 | 3 | 5 |
+            | 总计 | | | 44 |
+          
+          ## Day2 
+          Day 2 共三场比赛，分别为 A vs.C、B vs.C、A vs.D。
+
+          ### B vs.C
+          第三场拿了30分，本轮排名 11
+          | 对局 | 排名 | Kills | Score |
+          | --- | ---: | ---: | ---: |
+          | Game #1 | 15 | 0 | 1 |
+          | Game #2 | 14 | 0 | 1 |
+          | Game #3 | 12 | 1 | 2 |
+          | Game #4 | 5 | 6 | 10 |
+          | Game #5 | 5 | 6 | 9 |
+          | Game #6 | 7 | 2 | 7 |
+          | 总计 | | | 30 |
+
+          ## Group Stage 最终结果
+          VKG 以94分排名第23，遗憾落选胜者组，进入败者组第一轮
+          ![小组赛](/images/career/2025/小组赛.png)
+
+          # 双败淘汰赛 Bracket Stage
+          ## 赛制
+          败者组第一轮由小组赛 后 20 名 参加。 
+
+          | 结果 | 去向 | 
+          | --- | --- |
+          | 前 10 名 | 进入败者组第二轮 | 
+          | 后 10 名 | 淘汰，最终 31-40 名 | 
+
+          胜者组由小组赛 前 20 名 参加。 
+
+          | 结果 | 去向 |
+          | --- | --- |
+          | 前 10 名 | 直接晋级总决赛 |
+          | 后 10 名 | 掉入败者组第二轮|
+
+          败者组第二轮由两部分队伍组成：
+          
+          胜者组后 10 名 + 败者组第一轮前 10 名 = 20 队。 
+
+          | 结果 | 去向 |
+          | --- | --- |
+          | 前 10 名 | 晋级总决赛 | 
+          | 后 10 名 | 淘汰，最终 21-30 名 | 
+
+          ## 败者组第一轮
+          VKG 以 58 分第 4 名晋级败二。 
+
+          ## 败者组第二轮
+          VKG 以 50 分第 4 名晋级决赛，地狱归来，是当时CN队唯一一支进入决赛的队伍。 
+
+          # 决赛 Finals
+          总决赛中，VKG 面对 GoNext、Alliance、Team Falcons、FURIA、FNATIC 等世界强队。
+          最终他们以 58 分、27 次击杀 排名总决赛 第 9 名。
+          在赛点制规则下，VKG 已经在第 8 局后达到 50 分门槛，进入 Match Point 队伍行列，但可惜未能在后续比赛中吃鸡锁定冠军。
+          
+          ![Finals](/images/career/2025/202502finals.png)
 
           `),
-        videos: [],
+
+        videos: [
+          {
+            cover: "/images/career/2025/札幌/【中文字幕】英文流官方解说看到QQ飞车后彻底笑嘻 想解释三叉戟飞天BUG只剩语塞.avif",
+            text: "【中文字幕】英文流官方解说看到QQ飞车后彻底笑嘻 想解释三叉戟飞天BUG只剩语塞",
+            href: "https://www.bilibili.com/video/BV1DLFQe9Enu",
+          },
+          {
+            cover: "/images/career/2025/札幌/恭喜GONEXT!二鸡拿下冠军！新皇登基了，vkg棋差一招，遗憾%239.avif",
+            text: "恭喜GONEXT!二鸡拿下冠军！新皇登基了，vkg棋差一招，遗憾#9",
+            href: "https://www.bilibili.com/video/BV1R3F6eoEcE",
+          },
+          {
+            cover:"/images/career/2025/札幌/【ApexALGS-Y4-冠军赛】决赛《VKG》战队视角---20250202.avif",
+            text:"【Apex/ALGS-Y4-冠军赛】决赛《VKG》战队视角---2025/2/2",
+            href:"https://www.bilibili.com/video/BV1vmF6eAECs",
+          },
+        ],
       },
-      {
-        title: "常规赛",
-        date: "",
-        description: "",
-        videos: [],
-      },
+      // {
+      //   title: "常规赛",
+      //   date: "",
+      //   description: "",
+      //   videos: [],
+      // },
       {
         title: "Midseason Playoffs/EWC - Split 1",
         date: "2025-07",

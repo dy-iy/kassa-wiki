@@ -87,6 +87,18 @@ const careerEvents: TimelineEvent[] = [
     ],
   },
   {
+    time: "2024.01",
+    title: "Aono is back!",
+    text: "我是为了爱回来的",
+    videos: [
+      {
+        cover:"/images/career/2024/【卡莎】aono回归全过程，五小时精剪.avif",
+        text: "【卡莎】aono回归全过程，五小时精剪",
+        href: "https://www.bilibili.com/video/BV17k4y197DP",
+      },
+    ],
+  },
+  {
     time: "2024.08",
     title: "德国曼哈姆季后赛",
     text: "卡莎首次进入线下赛",
