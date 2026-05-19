@@ -195,10 +195,14 @@ export const careerYears = [
         date: "2025-07",
         description: md(`
           # EWC
-
+          
           ## Day2
           
           ![Day2数据](/images/career/2025/Day2data.png)
+
+          ## Day4 Finals
+
+          ![Day4数据](/images/career/2025/Day4data.png)
         `),
         videos: [
           {
