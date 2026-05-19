@@ -1,47 +1,105 @@
 import Link from "next/link";
 import { CalendarDays, Milestone } from "lucide-react";
+import { TimelineEventVideos } from "./timeline-event-videos";
+import type { CareerVideo } from "./year-data";
 import { careerYears } from "./year-data";
 
-const careerEvents = [
+type TimelineEvent = {
+  time: string;
+  title: string;
+  text: string;
+  videos?: CareerVideo[];
+};
+
+const careerEvents: TimelineEvent[] = [
   {
     time: "2021.06",
     title: "星空杯一打三",
-    text: "我要一打三了！我要一打三了！https://www.bilibili.com/video/BV1354y1H7Ex",
+    text: "赛场首秀",
+    videos: [
+      {
+        cover:"/images/career/2021/星空杯一打三.avif",
+        text: "【APEX/卡莎/星空杯】我要一打三！我要一打三了！",
+        href: "https://www.bilibili.com/video/BV1354y1H7Ex",
+      },
+    ],
   },
   {
     time: "2021.11",
     title: "从0开始单排上猎杀",
-    text: "国内第一个单排猎杀！https://www.bilibili.com/video/BV1h34y1Z7Cq",
+    text: "打破质疑，证明实力",
+    videos: [
+      {
+        cover:"/images/career/2021/国内第一个单排猎杀！.avif",
+        text: "国内第一个单排猎杀！",
+        href: "https://www.bilibili.com/video/BV1h34y1Z7Cq",
+      },
+    ],
   },
   {
     time: "2023.02",
     title: "VKG成立",
-    text: "随队完成多轮赛程，个人数据和团队排名开始进入 Wiki 归档范围。",
+    text: " ",
   },
   {
     time: "2023.03",
-    title: "四人小队被禁赛",
-    text: "https://www.bilibili.com/video/BV1jo4y1q7kz",
+    title: "四人小队事件",
+    text: "禁赛半年",
+    videos: [
+      {
+        cover:"/images/career/2023/【派圈梗百科】四人小队  教练场外？作弊行为？.avif",
+        text: "【派圈梗百科】四人小队 | 教练场外？作弊行为？",
+        href: "https://www.bilibili.com/video/BV1jo4y1q7kz",
+      },
+    ],
   },
   {
     time: "2024.08",
-    title: "第一次进线下-德国曼哈姆季后赛",
-    text: "https://www.bilibili.com/video/BV1bQHBeME2X",
+    title: "德国曼哈姆季后赛",
+    text: "卡莎首次进入线下赛",
+    videos: [
+      {
+        cover:"/images/career/2024/【VKG】卡哥第一次世界赛发癫不停唱歌，QQ怒斥别吵！.avif",
+        text: "[VKG]卡哥第一次世界赛发癫不停唱歌，QQ怒斥别吵！",
+        href: "https://www.bilibili.com/video/BV1VsHTexESs",
+      },
+    ],
   },
   {
     time: "2025.2",
-    title: "札幌冠军赛 卡莎，QQ，老吊",
-    text: "https://www.bilibili.com/video/BV1SYPzetEnK",
+    title: "2025札幌冠军赛",
+    text: "再次出战线下赛",
+    videos: [
+      {
+        cover:"/images/career/2025/【QQ飞车vkg队内语音视角】卡哥也没绷住 这下真QQ飞车了.avif",
+        text: "【QQ飞车vkg队内语音视角】卡哥也没绷住 这下真QQ飞车了",
+        href: "https://www.bilibili.com/video/BV1LwFfe2Eha",
+      },
+    ],
   },
   {
     time: "2025.7",
-    title: "EWC夺冠",
-    text: "https://www.bilibili.com/video/BV1EwuYzYEBF",
+    title: "EWC电竞世界杯&ALGS季中赛决赛",
+    text: "我们是冠军！",
+    videos: [
+      {
+        cover: "/images/career/2025/【EWC电竞世界杯】恭喜VKG夺得世界冠军！.avif",
+        text: "【EWC电竞世界杯】恭喜VKG夺得世界冠军！",
+        href: "https://www.bilibili.com/video/BV1EwuYzYEBF",
+      },
+    ],
   },
   {
     time: "2026.1",
-    title: "札幌冠军赛",
-    text: "路边",
+    title: "2026札幌冠军赛",
+    text: "继续出征，无奈路边，败者组出局",
+    videos: [
+      {
+        cover: "/images/career/2026/【VKG】彻底爆炸！卡莎到底要干几把啥啊！.avif",
+        text: "【VKG】彻底爆炸！卡莎:\"到底要干几把啥啊！\"",
+        href: "https://www.bilibili.com/video/BV131rSBcEX3/",
+      },
+    ],
   },
 ];
 
@@ -87,6 +145,7 @@ export default function CareerPage() {
                 <div>
                   <h3>{event.title}</h3>
                   <p>{event.text}</p>
+                  <TimelineEventVideos displayTitle={event.title} videos={event.videos} />
                 </div>
               </article>
             ))}

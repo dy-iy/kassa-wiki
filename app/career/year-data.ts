@@ -1,5 +1,5 @@
 export type CareerVideo = {
-  cover: string;
+  cover?: string;
   text: string;
   href: string;
 };
@@ -52,7 +52,7 @@ export const careerYears = [
   },
   {
     year: "2022",
-    title: "待补充",
+    title: "MDY时期",
     summary: "",
     team: "",
     role: "",
@@ -80,7 +80,7 @@ export const careerYears = [
   },
   {
     year: "2023",
-    title: "",
+    title: "VKG成立",
     summary: "",
     team: "",
     role: "",
@@ -108,7 +108,7 @@ export const careerYears = [
   },
   {
     year: "2024",
-    title: "",
+    title: "第一次进线下赛",
     summary: "",
     team: "",
     role: "",
@@ -136,7 +136,7 @@ export const careerYears = [
   },
   {
     year: "2025",
-    title: "",
+    title: "CNAPEX第一个世界赛冠军",
     summary: "",
     team: "",
     role: "",
@@ -154,18 +154,7 @@ export const careerYears = [
           },
         ],
       },
-      {
-        title: "不要笑挑战",
-        date: "2025-01-14",
-        description: "",
-        videos: [
-          {
-            cover: "/images/career/2025/【VKG】不要笑挑战.avif",
-            text: "【VKG】不要笑挑战",
-            href: "https://www.bilibili.com/video/BV1pFrxBCEWi/",
-          },
-        ],
-      },
+      
       {
         title: "拜年",
         date: "2025-01-28",
@@ -236,12 +225,24 @@ export const careerYears = [
   },
   {
     year: "2026",
-    title: "",
+    title: "VKG继续出征",
     summary: "",
     team: "",
     role: "",
     highlight: "",
     events: [
+      {
+        title: "不要笑挑战",
+        date: "2026-01-14",
+        description: "",
+        videos: [
+          {
+            cover: "/images/career/2026/【VKG】不要笑挑战.avif",
+            text: "【VKG】不要笑挑战",
+            href: "https://www.bilibili.com/video/BV1pFrxBCEWi/",
+          },
+        ],
+      },
       {
         title: "",
         date: "",
