@@ -11,6 +11,16 @@ export type CareerEvent = {
   videos: CareerVideo[];
 };
 
+const md = (content: string) => {
+  const lines = content.replace(/^\n/, "").replace(/\n\s*$/, "").split("\n");
+  const indents = lines
+    .filter((line) => line.trim().length > 0)
+    .map((line) => line.match(/^ */)?.[0].length ?? 0);
+  const minIndent = indents.length > 0 ? Math.min(...indents) : 0;
+
+  return lines.map((line) => line.slice(minIndent)).join("\n");
+};
+
 export const careerYears = [
   {
     year: "2021",
@@ -181,9 +191,15 @@ export const careerYears = [
         videos: [],
       },
       {
-        title: "EWC电竞世界杯",
-        date: "",
-        description: "",
+        title: "Midseason Playoffs/EWC - Split 1",
+        date: "2025-07",
+        description: md(`
+          # EWC
+
+          ## Day2
+          
+          ![Day2数据](/images/career/2025/Day2data.png)
+        `),
         videos: [
           {
             cover: "/images/career/2025/【沙特石油杯官方宣传片】冠军 VKG 的超帅宣传片！.avif",

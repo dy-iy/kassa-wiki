@@ -1,6 +1,7 @@
 import Link from "next/link";
-import Image from "next/image";
-import { ArrowLeft, CalendarDays, PlayCircle } from "lucide-react";
+import { ArrowLeft, CalendarDays } from "lucide-react";
+import { EventMarkdown } from "./event-markdown";
+import { EventVideos } from "./event-videos";
 import { careerYearMap } from "./year-data";
 
 export function CareerYearPage({ year }: { year: string }) {
@@ -43,8 +44,6 @@ export function CareerYearPage({ year }: { year: string }) {
             返回职业生涯总览
           </Link>
 
-          
-
           <section className="section-block">
             <div className="section-heading">
               <CalendarDays className="size-5" />
@@ -63,45 +62,12 @@ export function CareerYearPage({ year }: { year: string }) {
                   <div className="event-note-card">
                     <div className="event-card-section">
                       <h4>事件概览</h4>
-                      <p>{event.description || "待补充"}</p>
+                      <EventMarkdown>{event.description}</EventMarkdown>
                     </div>
 
                     <div className="event-card-section">
                       <h4>相关视频</h4>
-                      {event.videos.length > 0 ? (
-                        <div className="event-video-grid">
-                          {event.videos.map((video, videoIndex) => (
-                            <a
-                              className="event-video-link"
-                              href={video.href}
-                              key={`${video.href}-${videoIndex}`}
-                              rel="noopener noreferrer"
-                              target="_blank"
-                            >
-                              <span className="event-video-cover">
-                                {video.cover ? (
-                                  <Image
-                                    alt={video.text || event.displayTitle}
-                                    className="object-cover"
-                                    fill
-                                    sizes="(min-width: 1024px) 20rem, 100vw"
-                                    src={video.cover}
-                                  />
-                                ) : (
-                                  <span className="event-video-placeholder">
-                                    <PlayCircle className="size-10" />
-                                  </span>
-                                )}
-                              </span>
-                              <span className="event-video-title">
-                                {video.text || event.displayTitle}
-                              </span>
-                            </a>
-                          ))}
-                        </div>
-                      ) : (
-                        <p className="event-empty-text">暂无相关视频</p>
-                      )}
+                      <EventVideos displayTitle={event.displayTitle} videos={event.videos} />
                     </div>
                   </div>
                 </article>
